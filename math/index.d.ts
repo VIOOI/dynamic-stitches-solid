@@ -1,0 +1,15 @@
+export declare const add: (...args: any[]) => any;
+export declare const subtract: (...args: any[]) => any;
+export declare const multiply: (...args: any[]) => any;
+export declare const divide: (...args: any[]) => any;
+export declare const mod: (...args: any[]) => any;
+export declare const pow: (...args: any[]) => any;
+export declare const round: (...args: any[]) => any;
+export declare const sqrt: (...args: any[]) => any;
+export declare const sin: (...args: any[]) => any;
+export declare const cos: (...args: any[]) => any;
+export declare const tan: (...args: any[]) => any;
+export declare const log: (...args: any[]) => any;
+export declare const exp: (...args: any[]) => any;
+export declare const abs: (...args: any[]) => any;
+export declare const random: (unit: "px" | "em" | "rem", min: number, max: number, dec?: number) => import("../unit/unit").UnitFunction;

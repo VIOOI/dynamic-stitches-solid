@@ -1,0 +1,35 @@
+{
+  "name": "dynamic-stitches-solid",
+  "version": "0.0.3",
+  "description": "Create dynamic styles based on your data in the application",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
+  "author": "Vladimir Belov <laitvladimir@yandex.ru>",
+  "keywords": [],
+  "license": "MIT",
+  "scripts": {
+    "minify": "uglifyjs './**/*.js'",
+    "build": "tsc && yarn minify"
+  },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "logic/**/*.js",
+    "logic/**/*.d.ts",
+    "math/**/*.js",
+    "math/**/*.d.ts",
+    "unit/**/*.js",
+    "unit/**/*.d.ts"
+  ],
+  "peerDependencies": {
+    "@stitches/core": "^1.2.8",
+    "solid-js": "^1.6.6"
+  },
+  "devDependencies": {
+    "@stitches/core": "^1.2.8",
+    "solid-js": "^1.6.6",
+    "typescript": "^4.9.4",
+    "uglify-js": "^3.17.4"
+  }
+}
