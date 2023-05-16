@@ -1,6 +1,6 @@
 {
   "name": "dynamic-stitches-solid",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Create dynamic styles based on your data in the application",
   "main": "index.js",
   "types": "index.d.ts",
@@ -13,7 +13,7 @@
     "url": "https://github.com/VIOOI/dynamic-stitches-solid"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "yarn rollup -c"
   },
   "files": [
     "*.js",
