@@ -1,6 +1,6 @@
 {
   "name": "dynamic-stitches-solid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create dynamic styles based on your data in the application",
   "main": "index.js",
   "types": "index.d.ts",
@@ -9,8 +9,7 @@
   "keywords": [],
   "license": "MIT",
   "scripts": {
-    "minify": "uglifyjs './**/*.js'",
-    "build": "tsc && yarn minify"
+    "build": "tsc"
   },
   "files": [
     "*.js",

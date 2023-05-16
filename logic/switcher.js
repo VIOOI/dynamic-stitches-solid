@@ -1,7 +1,10 @@
 import { isUnitReturn, resolveCase, toValue } from "./utils";
+function isSwitcherArgs(arg) {
+    return arg && typeof arg === 'object' && 'input' in arg && 'cases' in arg;
+}
 export function switcher(inputOrArgs, cases, onDeafult = undefined) {
     let input;
-    if (typeof inputOrArgs === "object" && !(inputOrArgs instanceof UnitReturn)) {
+    if (isSwitcherArgs(inputOrArgs)) {
         ({ input, cases, onDeafult } = inputOrArgs);
     }
     else {
