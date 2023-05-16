@@ -10,6 +10,10 @@ type SwitcherArgs<T> = {
 	onDeafult?: T | (() => T),
 }
 
+function isSwitcherArgs<T>(arg: any): arg is SwitcherArgs<T> {
+	return arg && typeof arg === 'object' && 'input' in arg && 'cases' in arg;
+}
+
 export function switcher<T>(args: SwitcherArgs<T>): string | T;
 export function switcher<T>(
 	input: InputValue,
@@ -22,7 +26,7 @@ export function switcher<T>(
 	onDeafult: T | (() => T) = undefined,
 ): string | T {
 	let input: InputValue;
-	if (typeof inputOrArgs === "object" && !(inputOrArgs instanceof UnitReturn)) {
+	if (isSwitcherArgs(inputOrArgs)) {
 		({ input, cases, onDeafult } = inputOrArgs);
 	} else {
 		input = inputOrArgs;
