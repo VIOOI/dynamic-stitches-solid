@@ -8,6 +8,10 @@
   "author": "Vladimir Belov <laitvladimir@yandex.ru>",
   "keywords": [],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VIOOI/dynamic-stitches-solid"
+  },
   "scripts": {
     "build": "tsc"
   },
