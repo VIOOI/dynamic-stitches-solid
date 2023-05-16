@@ -1,41 +1,19 @@
-import typescript from 'rollup-plugin-typescript2';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-import dts from 'rollup-plugin-dts';
-import path from 'path';
-import fs from 'fs';
+import typescript from 'rollup-plugin-typescript2';
 
-const inputs = fs.readdirSync('src').reduce((acc, file) => {
-  if (path.extname(file) === '.ts') {
-    acc[file] = `src/${file}`;
-  }
-  return acc;
-}, {});
-
-const config = [{
-  input: inputs,
-  output: {
-    dir: '.',
-    format: 'es',
-    sourcemap: true,
-    plugins: [terser()]
-  },
-  plugins: [
-    typescript({
-      rollupCommonJSResolveHack: true,
-      clean: true,
-    }),
-  ],
-}];
-
-for (const input in inputs) {
-  config.push({
-    input: inputs[input],
+export default {
+    input: 'src/index.ts', // здесь указывается входной файл
     output: {
-      file: `${path.basename(input, '.ts')}.d.ts`,
-      format: 'es',
+        dir: '.', // здесь указывается выходная директория
+        format: 'esm', // здесь указывается формат выходного файла
+        sourcemap: true
     },
-    plugins: [dts()],
-  });
-}
-
-export default config;
+    plugins: [
+        typescript(),
+        resolve(),
+        commonjs(),
+        terser()
+    ]
+};
