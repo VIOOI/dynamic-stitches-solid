@@ -1,4 +1,4 @@
-import { CSSProperties, css } from "@stitches/core";
+import { css, CSSProperties } from "@stitches/core";
 import { Accessor } from "solid-js";
 export declare function removeStyles(styleId: string): void;
 type ReturnHook = Accessor<string & {
